@@ -16,6 +16,20 @@
                             src="{{ 'a.png' | asset_url }}"
                         />
                  {% endif %}
+                 {% if section.settings.image_2 %}
+                    <img 
+                        width="40"
+                        height="40"
+                        loading="lazy" 
+                        src="{{ section.settings.image_2 | image_url }}" />
+                    {% else %}
+                        <img 
+                            width="40"
+                            height="40"
+                            loading="lazy"
+                            src="{{ 'b.png' | asset_url }}"
+                        />
+                 {% endif %}
             </div>
             <div class="announcement-bar-right-section">
 
@@ -37,6 +51,12 @@
         {
             "type": "image_picker",
             "id":"image",
+            "label": "Image",
+            "info": "png recommended format"
+        },
+        {
+            "type": "image_picker",
+            "id":"image_2",
             "label": "Image",
             "info": "png recommended format"
         }
