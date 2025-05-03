@@ -10,7 +10,7 @@
     </div>
     <div>
        <ul class="middle-nav-link">
-        {% for link in linklists['main-menu'].link %}
+        {% for link in linklists['main-menu'].links %}
             <li>{{ link.title | link_to: link.url }}</li>
         {% endfor %}
            
