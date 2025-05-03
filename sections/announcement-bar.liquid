@@ -38,6 +38,13 @@
     </section>
 {% endif %}
 
+<style>
+    .announcement-bar{
+        background : {{ section.settings.background_color }};
+        color : {{ section.settings.text_color }}
+    }
+</style>
+
 {% schema %}
 {
     "name": "Announcement Bar",
@@ -59,6 +66,18 @@
             "id":"image_2",
             "label": "Image",
             "info": "png recommended format"
+        },
+        {
+            "type":"color",
+            "id": "text_color",
+            "label": "Text Color",
+            "default":"#000000"
+        },
+        {
+            "type":"color",
+            "id": "background_color",
+            "label": "Background Color",
+            "default":"#F4F4F4",
         }
     ],
     "presets": [
