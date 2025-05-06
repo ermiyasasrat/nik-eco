@@ -12,9 +12,14 @@
     "banner": {
       "type": "banner",
       "settings": {}
+    },
+    "three-images": {
+      "type": "three-images",
+      "settings": {}
     }
   },
   "order": [
-    "banner"
+    "banner",
+    "three-images"
   ]
 }
