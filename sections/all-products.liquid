@@ -2,7 +2,7 @@
     <h1>{{ collections['air-force'].title }}</h1>
     <div class="product-container">
         <div class="all-product-wrapper">
-    {% for product in collection['air-force'].products %}
+    {% for product in collections['air-force'].products %}
         <h3>{{ product.title | link_to: product.url }}</h3>
         {% endfor %}
         </div>
