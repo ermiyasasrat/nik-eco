@@ -10,8 +10,8 @@
             loading="lazy"
             src="{{ collection.featured_image | image_url }}"
         >
+            <h3>{{ collection.title | link_to: collection.url }}</h3>
     </div>
-    <h3>{{ collection.title | link_to: collection.url }}</h3>
     {% endfor %}
     </div>
 </div>
