@@ -3,11 +3,45 @@
     <div class="product-container">
         <div class="all-product-wrapper">
     {% for product in collections['air-force'].products %}
+        <div class="product-card">
+            <img 
+                width="300"
+                height="300"
+                loading="lazy"
+                src="{{ product.featured_image | image_url }}"
+            >
+        </div>
         <h3>{{ product.title | link_to: product.url }}</h3>
         {% endfor %}
         </div>
     </div>
     </section>
+
+    <style>
+        .all-product-wrapper{
+            display:flex;
+            transition:trasnform 0.3s ease;
+        }
+        .product-container{
+            position:relative;
+            overflow-x:scroll;
+        }
+        .product-card{
+            padding:10px;
+            box-sizing:border-box;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+        }
+        .product-card h3 a{
+            color:black;
+            text-decoration:none;
+        }
+        .product-card a:hover{
+            text-decoration:underline;
+        }
+    </style>
     
     {% schema %}
     {
