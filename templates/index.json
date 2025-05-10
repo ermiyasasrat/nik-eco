@@ -28,10 +28,6 @@
     "all-products": {
       "type": "all-products",
       "settings": {}
-    },
-    "footer": {
-      "type": "footer",
-      "settings": {}
     }
   },
   "order": [
@@ -39,7 +35,6 @@
     "three-images",
     "more-info",
     "all-collections",
-    "all-products",
-    "footer"
+    "all-products"
   ]
 }

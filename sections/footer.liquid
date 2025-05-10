@@ -17,20 +17,36 @@
             <p>Guides</p>
             <p>Terms of Sale</p>
         </div>
+        <div>
+            <p>Guides</p>
+            <p>Terms of Sale</p>
+            <p>Terms of Use</p>
+            <p>Privacy Policy</p>
+            <p>Guides</p>
+            <p>Terms of Sale</p>
+        </div>
+        <div>
+            <p>Guides</p>
+            <p>Terms of Sale</p>
+            <p>Terms of Use</p>
+            <p>Privacy Policy</p>
+            <p>Guides</p>
+            <p>Terms of Sale</p>
+        </div>
         {% else %}
             {% for block in section.blocks %}
              <div>
                 <li>
-                    <a href="{{ section.block.link }}">{{ block.settings.text | escape }}</a>
+                    <a href="{{ section.settings.link }}">{{ block.settings.text | escape }}</a>
                 </li>
                  <li>
-                    <a href="{{ section.block.link }}">{{ block.settings.text | escape }}</a>
+                    <a href="{{ section.settings.link }}">{{ block.settings.text | escape }}</a>
                 </li>
                  <li>
-                    <a href="{{ section.block.link }}">{{ block.settings.text | escape }}</a>
+                    <a href="{{ section.settings.link }}">{{ block.settings.text | escape }}</a>
                 </li>
                  <li>
-                    <a href="{{ section.block.link }}">{{ block.settings.text | escape }}</a>
+                    <a href="{{ section.settings.link }}">{{ block.settings.text | escape }}</a>
                 </li>
             </div>   
             {% endfor %}
@@ -46,9 +62,9 @@
 
 <style>
     .footer-main {
-        background:{{ section.settings.background }};
-        color:{{ section.settings.text_color }};
-        padding:10px;
+        background : {{ section.settings.background }};
+        color : {{ section.settings.text_color }};
+        padding : 10px;
     }
     .footer-sec-1 {
         margin-top:20px;
@@ -71,13 +87,13 @@
             "type": "color",
             "id":"background",
             "label": "Background",
-            "default":"#F4F4F4"
+            "default":"#000000"
         },
         {
             "type":"color",
             "id":"text_color",
             "label": "Text",
-            "default":"#000000"
+            "default":"#F4F4F4"
         }
         
     ],

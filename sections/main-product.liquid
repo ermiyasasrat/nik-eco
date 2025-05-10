@@ -1,0 +1,102 @@
+<section class="product-main">
+  <div class="product-main-wrapper">
+    <div class="product-image">
+      <img
+        width="500"
+        height="500"
+        loading="lazy"
+        src="{{ product.featured_image | image_url}}"
+      >
+    </div>
+    <div class="product-description">
+      <h2>{{ product.title }}</h2>
+      <p>{{ product.price | money }}</p>
+      <p class="description">{{ product.description }}</p>
+      <h3>Select Size</h3>
+      <div class="button-container">
+      {% form 'product', product %}
+        <select name="id">
+          {% for variant in product.variants %}
+            <option class="option" value="{{variant.id }}">
+              {{ variant.title }}
+            </option>
+          {% endfor %}
+        </select>
+        <button  type="submit">Add to Card</button>
+      {% endform %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+   .product-main {
+     background: {{ section.settings.background }}
+     ;
+     color: {{ section.settings.text_color }}
+     ;
+     padding: 10px;
+   }
+
+   .product-main-wrapper {
+     display: flex;
+     justify-content:space-around;
+  }
+  .product-image{
+    padding: 30px;
+   
+  }
+  .product-image img{
+     border-radius:10%;
+  }
+   .product-description {
+    width:40vw;
+  }
+  .option{
+    padding:10px 20px 10px 20px;
+  }
+  span {
+    line-height:20px;
+  }
+  button  {
+        padding:10px 20px 10px 20px;
+        margin-left:20px;
+        background-color:black;
+        border:none;
+        color:white;
+        border-radius:10px;
+        cursor:pointer;
+    }
+    button:hover{
+    background-color:rgb(185,185,185);
+    }
+    
+
+    
+
+</style>
+
+{% schema %}
+{
+  "name": "Product-main",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background",
+      "default": "#F4F4F4"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#000000"
+    }
+  ],
+  "presets": [
+    {
+      "name": "product-main"
+    }
+  ]
+}
+{% endschema %}
